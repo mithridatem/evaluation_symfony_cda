@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}Liste des taches{% endblock %}
+
+{% block body %}
+<h1>Liste des taches</h1>
+{% for task in tasks %}
+<div id="{{ task.id }}">
+	<h2>{{ task.title }}</h2>
+	<textarea cols="30" rows="10">
+                {{ task.content }}
+            </textarea
+	>
+	<h2>{{ task.expiryDate | date('d/m/Y') }}</h2>
+</div>
+{% endfor %} {% endblock %}
